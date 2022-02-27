@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Solution Items", "0 - Solution Items", "{3FE2FF70-72FB-412C-ADD4-6049098168DC}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\Developer.ExtensionCore.yml = ..\.github\workflows\Developer.ExtensionCore.yml
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionCore", "ExtensionCore\ExtensionCore.csproj", "{72E1AA3D-AF1E-4EFF-9482-B75E174484FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionCoreTest", "ExtensionCoreTest\ExtensionCoreTest.csproj", "{C1533A3B-96B9-48FE-A96A-4FBEF3211880}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Nuget", "1 - Nuget", "{DF47E28A-BC52-4E4D-81F2-82A3E4D0FB23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7EE7A0FD-05C1-47D9-B93C-3BDB518DD156}"
+	ProjectSection(SolutionItems) = preProject
+		..\Files\Documentation\001-BoolExtension.md = ..\Files\Documentation\001-BoolExtension.md
+		..\Files\Documentation\002-ByteExtension.md = ..\Files\Documentation\002-ByteExtension.md
+		..\Files\Documentation\003-DateTimeExtension.md = ..\Files\Documentation\003-DateTimeExtension.md
+		..\Files\Documentation\004-DecimalExtension.md = ..\Files\Documentation\004-DecimalExtension.md
+		..\Files\Documentation\005-DoubleExtension.md = ..\Files\Documentation\005-DoubleExtension.md
+		..\Files\Documentation\006-FloatExtension.md = ..\Files\Documentation\006-FloatExtension.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E1AA3D-AF1E-4EFF-9482-B75E174484FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E1AA3D-AF1E-4EFF-9482-B75E174484FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E1AA3D-AF1E-4EFF-9482-B75E174484FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E1AA3D-AF1E-4EFF-9482-B75E174484FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1533A3B-96B9-48FE-A96A-4FBEF3211880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1533A3B-96B9-48FE-A96A-4FBEF3211880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1533A3B-96B9-48FE-A96A-4FBEF3211880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1533A3B-96B9-48FE-A96A-4FBEF3211880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72E1AA3D-AF1E-4EFF-9482-B75E174484FA} = {DF47E28A-BC52-4E4D-81F2-82A3E4D0FB23}
+		{C1533A3B-96B9-48FE-A96A-4FBEF3211880} = {DF47E28A-BC52-4E4D-81F2-82A3E4D0FB23}
+		{7EE7A0FD-05C1-47D9-B93C-3BDB518DD156} = {3FE2FF70-72FB-412C-ADD4-6049098168DC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2F23703-F892-4368-B48D-7848AEA3913A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Developer.HttpCore</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>Rodrigo de Almeida Francisco</Authors>
+    <Product>Developer.HttpCore</Product>
+    <Description>Pacote de métodos para chamadas HTTP.
+- BaseHttpFactory
+- BaseHttpHandler
+- ResultHttp</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/rodrigoalmeidafrancisco/NuGet_Developer.HttpCore</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/rodrigoalmeidafrancisco/NuGet_Developer.HttpCore</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>.net, .netcore, http</PackageTags>
+    <PackageIconUrl />
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\Files\icon.png" Link="Files\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="..\..\readme.md" Link="Files\readme.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
+

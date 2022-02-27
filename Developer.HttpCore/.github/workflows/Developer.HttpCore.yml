@@ -1,0 +1,31 @@
+name: Developer.HttpCore
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Restore dependencies
+        working-directory: Project
+        run: dotnet restore
+
+      - name: Build
+        working-directory: Project
+        run: dotnet build --configuration Release --no-restore
+    
+      - name: Publish Nuget
+        run: dotnet nuget push **/*.nupkg -k ${{secrets.NUGETTOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
