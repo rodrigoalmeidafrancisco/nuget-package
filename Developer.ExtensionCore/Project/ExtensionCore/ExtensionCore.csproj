@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<PackageId>Developer.ExtensionCore</PackageId>
-		<Version>1.3.1</Version>
+		<Version>1.3.2</Version>
 		<Authors>Rodrigo de Almeida Francisco</Authors>
 		<Product>Developer.ExtensionCore</Product>
 		<Description>Pacote de métodos extensíveis para agilizar na validação e manipulação do desenvolvimento.
@@ -33,6 +33,7 @@
 		<RepositoryType>GitHub</RepositoryType>
 		<PackageTags>.net, .netcore, extension, extension-method</PackageTags>
 		<PackageIconUrl />
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
