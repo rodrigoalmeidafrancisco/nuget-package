@@ -11,11 +11,11 @@ namespace HttpCoreTest
     [TestClass]
     public class BaseHttpHandlerTest
     {
-        private string _uriAPI_ViaCEP = "https://viacep.com.br/";
+        private string _uriAPI_ViaCEP;
 
         public BaseHttpHandlerTest()
         {
-
+            _uriAPI_ViaCEP = "https://viacep.com.br/";
         }
 
         [TestMethod]
