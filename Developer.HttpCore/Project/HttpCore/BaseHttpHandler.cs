@@ -27,6 +27,7 @@ namespace HttpCore
             if (cookieContainer != null)
             {
                 clientHandler.CookieContainer = cookieContainer;
+                clientHandler.UseCookies = true;
             }
 
             _client = new HttpClient(clientHandler)
