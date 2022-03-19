@@ -35,11 +35,11 @@ namespace HttpCore
             };
         }
 
-        public void AddDefaultRequestHeaders(string authorizationScheme = "Bearer", string authorizationParameter = "", string mediaType = "application/json")
+        public void AddDefaultRequestHeaders(string authenticationScheme = "Bearer", string authenticationParameter = "", string mediaType = "application/json")
         {
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authorizationScheme, authorizationParameter);
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authenticationScheme, authenticationParameter);
         }
 
         public void AddBearerTokenRequest(string token, string mediaType = "application/json")
