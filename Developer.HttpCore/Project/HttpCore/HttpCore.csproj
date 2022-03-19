@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Developer.HttpCore</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.1.0</Version>
     <Authors>Rodrigo de Almeida Francisco</Authors>
     <Product>Developer.HttpCore</Product>
     <Description>Pacote de métodos para chamadas HTTP.

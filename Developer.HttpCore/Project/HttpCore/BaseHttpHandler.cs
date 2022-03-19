@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -12,7 +13,7 @@ namespace HttpCore
         private readonly HttpClient _client;
         private readonly bool _configureAwait;
 
-        public BaseHttpHandler(string linkBaseAddress, bool notVerificationSSL = false, bool configureAwait = false)
+        public BaseHttpHandler(string linkBaseAddress, bool notVerificationSSL = false, bool configureAwait = false, CookieContainer cookieContainer = null)
         {
             _configureAwait = configureAwait;
 
@@ -23,10 +24,22 @@ namespace HttpCore
                 clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             }
 
+            if (cookieContainer != null)
+            {
+                clientHandler.CookieContainer = cookieContainer;
+            }
+
             _client = new HttpClient(clientHandler)
             {
                 BaseAddress = new Uri(linkBaseAddress)
             };
+        }
+
+        public void AddDefaultRequestHeaders(string authorizationScheme = "Bearer", string authorizationParameter = "", string mediaType = "application/json")
+        {
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(authorizationScheme, authorizationParameter);
         }
 
         public void AddBearerTokenRequest(string token, string mediaType = "application/json")
