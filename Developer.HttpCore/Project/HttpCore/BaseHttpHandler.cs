@@ -10,10 +10,12 @@ namespace HttpCore
 {
     public class BaseHttpHandler
     {
-        private readonly HttpClient _client;
+        public string _phraseIdentifyRejection;
+        public readonly HttpClient _client;
         private readonly bool _configureAwait;
 
-        public BaseHttpHandler(string linkBaseAddress, bool notVerificationSSL = false, bool configureAwait = false, CookieContainer cookieContainer = null)
+        public BaseHttpHandler(string linkBaseAddress, bool notVerificationSSL = false, bool configureAwait = false, CookieContainer cookieContainer = null,
+            string phraseIdentifyRejection = null)
         {
             _configureAwait = configureAwait;
 
@@ -34,6 +36,8 @@ namespace HttpCore
             {
                 BaseAddress = new Uri(linkBaseAddress)
             };
+
+            _phraseIdentifyRejection = phraseIdentifyRejection;
         }
 
         public void AddDefaultRequestHeaders(string authenticationScheme = "Bearer", string authenticationParameter = "", string mediaType = "application/json")
@@ -204,6 +208,11 @@ namespace HttpCore
             }
             catch
             {
+            }
+
+            if (_phraseIdentifyRejection != null)
+            {
+                resultHttp.RequestRejected = resultHttp.DataString.ToUpper().Contains(_phraseIdentifyRejection.ToUpper());
             }
 
             return resultHttp;

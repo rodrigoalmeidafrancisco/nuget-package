@@ -8,13 +8,15 @@ namespace HttpCore
 {
     public class BaseHttpFactory
     {
-        private readonly HttpClient _client;
+        public string _phraseIdentifyRejection;
+        public readonly HttpClient _client;
         private readonly bool _configureAwait;
 
-        public BaseHttpFactory(IHttpClientFactory factory, string factoryName, bool configureAwait = false)
+        public BaseHttpFactory(IHttpClientFactory factory, string factoryName, bool configureAwait = false, string phraseIdentifyRejection = null)
         {
             _client = factory.CreateClient(factoryName);
             _configureAwait = configureAwait;
+            _phraseIdentifyRejection = phraseIdentifyRejection;
         }
 
         #region Get
@@ -171,6 +173,11 @@ namespace HttpCore
             }
             catch
             {
+            }
+
+            if (_phraseIdentifyRejection != null)
+            {
+                resultHttp.RequestRejected = resultHttp.DataString.ToUpper().Contains(_phraseIdentifyRejection.ToUpper());
             }
 
             return resultHttp;
