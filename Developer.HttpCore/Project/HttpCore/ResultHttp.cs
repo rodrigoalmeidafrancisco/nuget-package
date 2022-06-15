@@ -21,5 +21,7 @@ namespace HttpCore
         public byte[] DataBytes { get; set; }
 
         public Stream DataStream { get; set; }
+        
+        public bool RequestRejected { get; set; }
     }
 }
